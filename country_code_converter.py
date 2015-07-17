@@ -49,7 +49,7 @@ def create_index(table):
 
 
 def create_column_index(table, colindex):
-    """creates index from column value to to corresponding table row"""
+    """creates index from column value to corresponding table row"""
     return dict([(row[colindex], row) for row in table])
 
 
