@@ -2,7 +2,7 @@
 Converts between different naming schemas for countries (ISO2, ISO3, car plate IDs, numerical, english, German).
 
 # Command-line usage: 
-python country_code_converter.py from_standard from_value [to_standards]
+python country_code_converter.py from_standard from_value [to_standard]
 
 # Available naming standards:
     name_english

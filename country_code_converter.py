@@ -78,7 +78,7 @@ def get_cc(from_column, from_value, to_column=None, index=index):
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print "Converts between different naming schemes for countries."
-        print "Usage: python country_code_converter.py from_standard from_value [to_standards]"
+        print "Usage: python country_code_converter.py from_standard from_value [to_standard]"
         print
         print "Available naming standards:"
         for column in columns:
