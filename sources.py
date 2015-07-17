@@ -1,6 +1,6 @@
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-# source = https://de.wikipedia.org/wiki/Liste_der_Kfz-Nationalit%C3%A4tszeichen
+# source = https://de.wikipedia.org/wiki/Liste_der_Kfz-Nationalit%C3%A4tszeichen retrieved on 16.7.2015
 car_signs = """
 <table class="wikitable sortable zebra hintergrundfarbe1 jquery-tablesorter">
 <thead><tr>
@@ -1789,7 +1789,7 @@ car_signs = """
 </tr>
 </tbody><tfoot></tfoot></table>"""
 
-# source = https://en.wikipedia.org/wiki/ISO_3166-1
+# source = https://en.wikipedia.org/wiki/ISO_3166-1 retrieved on 16.7.2015
 country_codes = """
 <table class="wikitable sortable jquery-tablesorter">
 <thead><tr>
