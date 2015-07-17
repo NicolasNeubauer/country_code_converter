@@ -1,5 +1,7 @@
 # country_code_converter
-Converts between different naming schemas for countries (ISO2, ISO3, car plate IDs, numerical, english, German).
+Converts between different naming schemas for countries (ISO2, ISO3, car plate IDs, numerical, english, German). 
+
+`country_code_converter.py` exposes the main method `get_cc` which looks for a country with value `from_value` in the column for `from_standard` and return the column for `to_standard` or the whole row, if `to_standard` is left unspecified.
 
 ## Command-line usage
 python country_code_converter.py from_standard from_value [to_standard]
