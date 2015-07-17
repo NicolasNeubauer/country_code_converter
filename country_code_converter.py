@@ -99,5 +99,3 @@ if __name__ == "__main__":
     if len(sys.argv)>3:
         to_column = sys.argv[3]
     print get_cc(from_column, from_value, to_column)
-
-    
