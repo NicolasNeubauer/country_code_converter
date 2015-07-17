@@ -21,7 +21,9 @@ class TestIndexCreation(unittest.TestCase):
         index = country_code_converter.create_index(table)
 
         row = country_code_converter.get_cc('name_english', 'Austria', index=index)
-        self.assertEqual(table[0], row)
+        rowdict = dict([(country_code_converter.columns[i], val)
+                        for (i, val) in enumerate(table[0])])
+        self.assertEqual(rowdict, row)
 
         col = country_code_converter.get_cc('name_english', 'Austria', 'car', index=index)
         self.assertEqual(table[0][5], col)

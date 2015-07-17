@@ -9,7 +9,6 @@ class CarParser(HTMLParser):
         self.start = False
         self.currentRow = []
         self.currentCol = 0
-        self.ignoreNext = False
 
         
     def handle_starttag(self, tag, attrs):
@@ -32,9 +31,6 @@ class CarParser(HTMLParser):
         if data == "\n":
             return
         if self.currentCol > 2:
-            return
-        if self.ignoreNext:
-            self.ignoreNext = False
             return
         
         self.currentRow.append(data)
