@@ -54,7 +54,7 @@ def create_column_index(table, colindex):
 
 
 # initialization
-columns = ['name_english', 'alpha-2', 'alpha-3', 'numeric', 'name_german', 'car']
+columns = ['name_english', 'iso2', 'iso3', 'numeric', 'name_german', 'car']
 column_to_index = dict([(name, index) for index, name in enumerate(columns)])
 supported_languages = ['english', 'german']
 table = create_table(sources.country_codes)
