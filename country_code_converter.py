@@ -58,7 +58,7 @@ columns = ['name_english', 'iso2', 'iso3', 'numeric', 'name_german', 'car']
 column_to_index = dict([(name, index) for index, name in enumerate(columns)])
 supported_languages = ['english', 'german']
 table = create_table(sources.country_codes)
-add_car_signs(table, column_to_index['alpha-2'], sources.car_signs)
+add_car_signs(table, column_to_index['iso2'], sources.car_signs)
 index = create_index(table)
 
 

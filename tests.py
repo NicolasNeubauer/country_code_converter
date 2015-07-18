@@ -36,5 +36,5 @@ class TestIndexCreation(unittest.TestCase):
 
 
     def testOutput(self):
-        self.assertEqual(country_code_converter.get_cc('name_english', 'Italy', 'alpha-2'), 'IT')
+        self.assertEqual(country_code_converter.get_cc('name_english', 'Italy', 'iso2'), 'IT')
         self.assertEqual(country_code_converter.get_cc('name_german', 'Deutschland', 'car'), 'D')
