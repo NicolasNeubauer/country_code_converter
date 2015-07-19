@@ -3544,3 +3544,5 @@ country_codes = """
 </tr>
 </tbody><tfoot></tfoot></table>
 """
+
+# source = country_centroids.zip via http://gothos.info/resources/ , retrieved 19.7.2015

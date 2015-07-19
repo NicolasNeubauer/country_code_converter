@@ -2,7 +2,7 @@ import unittest
 import country_code_converter, sources
 
 table = [
-    ['Austria', 'Oesterreich', 'AT', 'AUT', '040', 'A']
+    ['Austria', 'Oesterreich', 'AT', 'AUT', '040', 'A', (47.333333, 13.333333)]
     ]
 
 class TestIndexCreation(unittest.TestCase):
@@ -38,3 +38,4 @@ class TestIndexCreation(unittest.TestCase):
     def testOutput(self):
         self.assertEqual(country_code_converter.get_cc('name_english', 'Italy', 'iso2'), 'IT')
         self.assertEqual(country_code_converter.get_cc('name_german', 'Deutschland', 'car'), 'D')
+        self.assertEqual(country_code_converter.get_cc('iso3', 'AUT', 'centroid'), (47.333333, 13.333333))

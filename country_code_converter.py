@@ -32,14 +32,21 @@ def add_car_signs(table, indexCol, cs):
             row[0] = row[0][0:-1]
 
         # get row for ISO-2 value, append German name and car sign
-        tablerow = keyToRow[row[2]]
-        tablerow.append(row[1])
-        tablerow.append(row[0])
-    
+        keyToRow[row[2]] += [row[1], row[0]]
+        
     for row in table:
         if len(row)==4:
+            row += [None, None]
+
+
+def add_centroids(table, indexCol, filename):
+    iso2_to_centroid = source_parsers.parseCentroids(filename)
+    for row in table:
+        coords = iso2_to_centroid.get(row[indexCol], None)
+        if not coords:
             row.append(None)
-            row.append(None)
+        else:
+            row.append(coords)
 
 
 def create_index(table):
@@ -54,13 +61,13 @@ def create_column_index(table, colindex):
 
 
 # initialization
-columns = ['name_english', 'iso2', 'iso3', 'numeric', 'name_german', 'car']
+columns = ['name_english', 'iso2', 'iso3', 'numeric', 'name_german', 'car', 'centroid']
 column_to_index = dict([(name, index) for index, name in enumerate(columns)])
 supported_languages = ['english', 'german']
 table = create_table(sources.country_codes)
 add_car_signs(table, column_to_index['iso2'], sources.car_signs)
+add_centroids(table, column_to_index['iso2'], 'country_centroids_primary.csv')
 index = create_index(table)
-
 
 # public interface
 def get_cc(from_column, from_value, to_column=None, index=index):
