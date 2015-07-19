@@ -85,14 +85,12 @@ class CCParser(HTMLParser):
         
 
 
-def parseCentroids(filename):
+def parseCentroids(lines):
     iso2_to_centroid = {}
-    with open(filename, 'r') as f:
-        f.readline()
-        for l in f.xreadlines():
-            fields = l.replace('\n','').split('\t')
-            lat = float(fields[0])
-            lon = float(fields[1])
-            iso2 = fields[12]
-            iso2_to_centroid[iso2] =  (lat, lon)
+    for l in lines.split('\n')[1:]:
+        fields = l.split('\t')
+        lat = float(fields[0])
+        lon = float(fields[1])
+        iso2 = fields[12]
+        iso2_to_centroid[iso2] =  (lat, lon)
     return iso2_to_centroid

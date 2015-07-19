@@ -39,8 +39,8 @@ def add_car_signs(table, indexCol, cs):
             row += [None, None]
 
 
-def add_centroids(table, indexCol, filename):
-    iso2_to_centroid = source_parsers.parseCentroids(filename)
+def add_centroids(table, indexCol, data):
+    iso2_to_centroid = source_parsers.parseCentroids(data)
     for row in table:
         coords = iso2_to_centroid.get(row[indexCol], None)
         if not coords:
@@ -66,7 +66,7 @@ column_to_index = dict([(name, index) for index, name in enumerate(columns)])
 supported_languages = ['english', 'german']
 table = create_table(sources.country_codes)
 add_car_signs(table, column_to_index['iso2'], sources.car_signs)
-add_centroids(table, column_to_index['iso2'], 'country_centroids_primary.csv')
+add_centroids(table, column_to_index['iso2'], sources.centroid_data)
 index = create_index(table)
 
 # public interface
