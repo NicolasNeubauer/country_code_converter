@@ -3,7 +3,7 @@ Converts between different naming schemas for countries (ISO2, ISO3, car plate I
 
 `country_code_converter.py` exposes the main method `get_cc`. It looks for a country with value `from_value` (e.g. DEU) in the column specified by `from_standard` (e.g. iso3) and returns, for the column defined by `to_standard` (e.g. iso2) the corresponding value (e.g. DE), or the whole row, if `to_standard` is left unspecified. 
 
-Some additional information is included which is not, technically speaking, a country code, like full names or the centroid.
+Some columns are not actual country codes but related information, like full names or the centroid.
 
 ## Command-line usage
 python country_code_converter.py from_standard from_value [to_standard]
