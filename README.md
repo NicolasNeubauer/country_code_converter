@@ -15,18 +15,20 @@ python country_code_converter.py from_standard from_value [to_standard]
     car
     centroid
 
-## Command-line examples
+## Examples
+### Command-line 
     python country_code_converter.py name_english Italy car
 I
 
     python country_code_converter.py name_english Italy
-{'name_english': 'Italy', 'car': 'I', 'numeric': '380', 'name_german': 'Italien', 'alpha-2': 'IT', 'alpha-3': 'ITA'}
 
-## Code examples
+    > {'name_english': 'Italy', 'car': 'I', 'numeric': '380', 'name_german': 'Italien', 'alpha-2': 'IT', 'alpha-3': 'ITA'}
+
+### Python
     import country_code_converter
     print country_code_converter.get_cc('name_english', 'Italy', 'car')
 
-I
+    > I
 
 ## License 
 MIT
